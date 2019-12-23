@@ -123,10 +123,7 @@ def input_thread(list):
 
 
 def main_loop(eps_history,dqn_scores,avg_score_all,render,load_checkpoint):
-    """
-    This just calls training function
-    as long as we get input to stop
-    """
+    #call training loop
     list = []
     _thread.start_new_thread(input_thread, (list,))
     while True:

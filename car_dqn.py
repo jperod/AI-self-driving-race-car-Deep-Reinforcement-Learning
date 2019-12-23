@@ -6,14 +6,10 @@ import itertools as it
 
 
 class CarRacingDQN(DQN):
-    """
-    CarRacing specifig part of the DQN-agent
+    #CarRacing specific part of the DQN-agent
 
-    Some minor env-specifig tweaks but overall
-    assumes very little knowledge from the environment
-    """
 
-    # ** are used for unpacking the model configurations
+    # ** is used for unpacking the model configurations
     def __init__(self, max_negative_rewards=100, **model_config):
 
         #Define all 12 actions possible:
@@ -38,10 +34,7 @@ class CarRacingDQN(DQN):
 
 
     def get_random_action(self):
-        """
-        Here random actions prefer gas to break
-        otherwise the car can never go anywhere.
-        """
+# give priority to acceleration actions
         action_weights = 14.0 * self.gas_actions + 1.0
         action_weights /= np.sum(action_weights)
 

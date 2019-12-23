@@ -1,10 +1,7 @@
 import numpy as np
 
 class ExperienceReplay:
-    """
-    Instead of running Q-learning on state/action pairs as they occur during simulation or the actual experience,
-    the system stores the data discovered for [state, action, reward, next_state] – in a large table.
-    """
+
     def __init__(self,
             num_frame_stack=4,
             capacity=int(1e5),

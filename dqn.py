@@ -8,17 +8,6 @@ from processimage import processimage
 
 
 class DQN:
-    """
-    DQN agent.
-
-    The implementation follows:
-    Mnih et. al - Playing Atari with Deep Reinforcement Learning https://arxiv.org/pdf/1312.5602.pdf
-
-    The q-network structure is different from the original paper
-
-    see also:
-    David Silver's RL course lecture 6: https://www.youtube.com/watch?v=UoPei5o4fps&t=1s
-    """
 
     def __init__(self,
             env,

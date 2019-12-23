@@ -7,18 +7,17 @@ from skimage import color, transform, io
 
 class processimage:
     def process_image(obs):
+        #uncomment to see original image
         # plt.imshow(obs)
         # plt.show()
 
         obs1 = obs.astype(np.uint8)
-        # obs2= transform.rescale(obs1[0:84,:], 1)
-        obs3 = obs1
-        # obs3[:,:,0] = 0
-        obs_gray = color.rgb2gray(obs3)
+        obs_gray = color.rgb2gray(obs1)
         # obs_gray[abs(obs_gray - 0.60116) < 0.1] = 1
         obs_gray[84:95,0:12] = 0
         obs_gray[abs(obs_gray - 0.68616) < 0.0001] = 1
         obs_gray[abs(obs_gray - 0.75630) < 0.0001] = 1
+        #uncomment to see pre processed image
         # plt.imshow(obs_gray, cmap='gray')
         # plt.show()
 
